@@ -1,0 +1,9 @@
+body{
+    background-color: black;
+}
+.main_div{
+background-color: white;
+width:75%;
+display:flex;
+align-items:center;
+margin:auto}
