@@ -9,8 +9,9 @@ import numpy as np
 
 
 df = pd.read_excel(
-    "dashboard.xlsx"
+    "assets/dashboard.xlsx",
 )
+
 totac=df.groupby('Date')['Outcome'].count()
 totsuc=df[df['Outcome']=='Success'].groupby('Date')['Outcome'].count()
 totnsuc=df[df['Outcome']=='Failure'].groupby('Date')['Outcome'].count()
