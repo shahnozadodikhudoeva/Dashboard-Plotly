@@ -60,8 +60,12 @@ totsucT=totsucT.sort_index()
 
 
 #ploting
-import numpy as np
-app = Dash()
+app = Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
+
+
+
+
 state_options = df["State"].unique()
 state_options=np.insert(state_options, 0, "All")
 time_options=df["Time_Period"].unique()
@@ -305,4 +309,5 @@ def update_output(value):
     return figure
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server("0.0.0.0", debug=False, port=int(
+        os.environ.get('PORT', 8000)))
