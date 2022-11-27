@@ -1,4 +1,5 @@
 import os
+import dash
 from dash import Dash, dcc, html,  Input, Output,  State
 import plotly.express as px
 import pandas as pd
@@ -62,9 +63,8 @@ totsucT=totsucT.sort_index()
 
 
 #ploting
-app = Dash(__name__)
+app = dash.Dash(__name__)
 server = app.server
-
 
 
 
